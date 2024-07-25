@@ -16,7 +16,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
       - uses: actions/checkout@v4
@@ -26,14 +26,15 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
-      - name: Build with Maven
+      - name: Build & Test with Maven
         run: mvn clean install
+        #mvn -B clean verify package --file pom.xml
 
       - name: Test with Maven
         run: mvn test
 
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Deploy with Maven
         run: mvn verify
