@@ -57,4 +57,5 @@ jobs:
 #          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 #          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
 #        run: mvn verify -DskipTests sonar:sonar -Dsonar.projectKey=classe_service -Dsonar.projectName='classe_service' -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqp_2e7d6598a423a1a47a519f600c8c4c7f822ca841
+      - name: Verify & Packaging
         run: mvn verify -DskipTests
